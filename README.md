@@ -1,3 +1,7 @@
+# Projeto Busscador Fronent
+
+Inicio de projeto com front sendo desenvolvido para futuras implementações.
+
 # ApiFront
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
