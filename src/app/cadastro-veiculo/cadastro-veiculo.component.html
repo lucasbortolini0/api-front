@@ -1,0 +1,91 @@
+<div>
+    <form [formGroup]="veiculoForm">
+        <div>
+            <mat-form-field class="form-field">
+                <input matInput placeholder="Marca" formControlName="marca" style="width: 150px;">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="form-field">
+                <input matInput placeholder="Modelo" formControlName="modelo">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="form-field">
+                <mat-select placeholder="Ano" formControlName="ano">
+                <mat-option *ngFor="let ano of sharedService.anos" [value]="ano">{{ ano }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div> 
+
+        <div>
+            <mat-form-field class="form-field">
+                <input matInput placeholder="Chassi" formControlName="chassi">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="form-field">
+                <mat-select matInput placeholder="Categoria" formControlName="categoria" (selectionChange)="onTipoCategoriaChange($event)">
+                    <mat-option *ngFor="let categoria of categorias" [value]="categoria.value">{{categoria.viewValue}}</mat-option>
+                </mat-select>
+                
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="form-field">
+                <input matInput placeholder="Valor" formControlName="valor">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="form-field">
+                <mat-select placeholder="Tipo Monta" formControlName="tipoMonta" (selectionChange)="onTipoMontaChange($event)">
+                <mat-option *ngFor="let tipoMonta of tiposMontas" [value]="tipoMonta.value">{{tipoMonta.viewValue}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div>                       
+            <mat-form-field class="form-field">
+                <mat-select placeholder="Blindado?" formControlName="blindado" (selectionChange)="onBlindadoChange($event)">
+                <mat-option *ngFor="let blindado of acaoBlindados" [value]="blindado.value">{{blindado.viewValue}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="form-field">
+                <input matInput placeholder="Valor Fipe" formControlName="fipe">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="form-field">
+                <mat-select placeholder="Tipo Combustível" formControlName="tipoCombustivel" (selectionChange)="onTipoCombustivelChange($event)">
+                    <mat-option *ngFor="let combustivel of tiposCombustivel" [value]="combustivel.value">{{ combustivel.viewValue }}</mat-option>
+                </mat-select>
+            </mat-form-field>            
+        </div>
+
+        <div>
+            <mat-form-field class="form-field">
+                <textarea matInput placeholder="Informações Gerais" formControlName="informacoesGerais"></textarea>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="form-field">
+                <mat-select placeholder="Status Venda" formControlName="statusVenda" (selectionChange)="onStatusVendaChange($event)">
+                    <mat-option *ngFor="let statusVenda of statusVendas" [value]="statusVenda.value">{{ statusVenda.viewValue }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+    </form>
+  </div>
+  
+  <button mat-raised-button mat-dialog-close>Cancelar</button>
+  <button mat-raised-button (click)="salvarVeiculo()" color="primary">Salvar</button>
+  

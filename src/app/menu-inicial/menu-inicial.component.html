@@ -1,0 +1,69 @@
+<mat-toolbar [ngClass]="{'dark-mode': temaAtual}">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menuOpcoes">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="span">Iniciar</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Toggle Tema" (click)="toggleTema()">
+      <mat-icon>{{ temaAtual ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>logout</mat-icon>
+    </button>
+  
+    <mat-menu #menuOpcoes="matMenu">
+        <button mat-menu-item (click)="acaoOpcao('Cliente')">Cliente</button>
+        <button mat-menu-item (click)="acaoOpcao('Documento')">Documento</button>
+        <button mat-menu-item (click)="acaoOpcao('Proprietario')">Proprietário</button>
+        <button mat-menu-item (click)="acaoOpcao('Veiculo')">Veiculo</button>
+        <button mat-menu-item (click)="acaoOpcao('Venda')">Venda</button>
+        <button mat-menu-item (click)="acaoOpcao('Vendedor')">Vendedor</button>
+        <button mat-menu-item (click)="acaoOpcao('Consultar Veiculo')">Consulta Veiculo</button>        
+    </mat-menu>
+  </mat-toolbar>
+
+  <div *ngIf="mostrarFormularioCliente">
+    <!-- Adicione aqui o formulário de cadastro de Cliente -->
+    <h2>Formulário de Cadastro de Cliente</h2>    
+  </div>
+  
+  <div *ngIf="mostrarFormularioDocumento">
+    <!-- Adicione aqui o formulário de cadastro de Documento -->
+    <h2>Formulário de Cadastro de Documento</h2>
+    
+    <!-- Adicione os campos e lógica de cadastro de Documento aqui -->
+  </div>
+  
+  <div *ngIf="mostrarFormularioProprietario">
+    <!-- Adicione aqui o formulário de cadastro de Proprietário -->
+    <h2>Formulário de Cadastro de Proprietário</h2>
+    <!-- Adicione os campos e lógica de cadastro de Proprietário aqui -->
+  </div>
+  
+  
+<div *ngIf="mostrarFormularioVeiculo">
+    <!-- Adicione aqui o formulário de cadastro de Veículo -->
+    <h2>Formulário de Cadastro de Veículo</h2>
+    <p>Cadastro de todas as informações do Veículo.</p>
+    <app-cadastro-veiculo></app-cadastro-veiculo>
+    <!-- Adicione os campos e lógica de cadastro de Veículo aqui -->
+</div>
+  
+  
+  <div *ngIf="mostrarFormularioVenda">
+    <!-- Adicione aqui o formulário de cadastro de Venda -->
+    <h2>Formulário de Cadastro de Venda</h2>    
+    <!-- Adicione os campos e lógica de cadastro de Venda aqui -->
+  </div>
+  
+  <div *ngIf="mostrarFormularioVendedor">
+    <!-- Adicione aqui o formulário de cadastro de Vendedor -->
+    <h2>Formulário de Cadastro de Vendedor</h2>
+    <!-- Adicione os campos e lógica de cadastro de Vendedor aqui -->
+  </div>
+  
+  <div *ngIf="mostrarFormularioConsultaVeiculo">
+    <!-- Adicione aqui o formulário de consulta de Veículo -->
+    <h2>Formulário de Consulta de Veículo</h2>
+    <!-- Adicione os campos e lógica de consulta de Veículo aqui -->
+  </div>

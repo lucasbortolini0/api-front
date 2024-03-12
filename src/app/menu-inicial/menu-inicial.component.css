@@ -1,0 +1,18 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
+.span {
+    padding-left: 10px;
+    color: black;
+}
+
+.example-icon{
+    margin-left: 5px;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  
